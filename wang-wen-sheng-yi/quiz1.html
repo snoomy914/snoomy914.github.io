@@ -191,7 +191,7 @@
           <li>🎲 随机抽题，连续两次不会抽到同一题</li>
           <li>💡 答对/答错即时反馈，并显示解析（原意+易错点）</li>
         </ul>
-        <p>出自 <a href="/" target="_blank" rel="noopener">Kuqilin 的小站</a>。</p>
+        <p>出自 <a href="/" target="_blank" rel="noopener">Snoomy 的小站</a>。</p>
       </div>
     </div>
   </div>
@@ -230,7 +230,7 @@ async function start() {
   // 1. 加载老数据（用于解析）
   let legacyMap = {};
   try {
-    const respLegacy = await fetch("https://kuqilin.github.io/wang-wen-sheng-yi/wang-wen-sheng-yi.json", { cache: "no-store" });
+    const respLegacy = await fetch("https://snoomy914.github.io/wang-wen-sheng-yi/wang-wen-sheng-yi.json", { cache: "no-store" });
     if (respLegacy.ok) {
       const legacyData = await respLegacy.json();
       // 按成语名称建立映射，以便根据当前成语获取原意和易错点
@@ -251,7 +251,7 @@ async function start() {
   // 2. 加载新数据（题目）
   let data;
   try {
-    const resp = await fetch("https://kuqilin.github.io/wang-wen-sheng-yi/wang-wen-sheng-yi-quiz.json", { cache: "no-store" });
+    const resp = await fetch("https://snoomy914.github.io/wang-wen-sheng-yi/wang-wen-sheng-yi-quiz.json", { cache: "no-store" });
     if (!resp.ok) throw new Error("HTTP " + resp.status);
     data = await resp.json();
   } catch (err) {
