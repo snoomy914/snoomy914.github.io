@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Queue on Snoomy&#39;s Blog</title>
+    <link>https://snoomy914.github.io/en/tags/queue/</link>
+    <description>Recent content from Snoomy&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    
+    <managingEditor>chankeichow2008@outlook.com (Snoomy)</managingEditor>
+    <webMaster>chankeichow2008@outlook.com (Snoomy)</webMaster>
+    
+    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    
+    <lastBuildDate>Sat, 13 May 2023 00:00:00 +0000</lastBuildDate>
+    
+    
+    <atom:link href="https://snoomy914.github.io/en/tags/queue/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>栈、队列和双端队列的Python实现</title>
+      <link>https://snoomy914.github.io/en/post/zhan-dui-lie-hu-shuang-duan-dui-lie-di-python-shi-xian/</link>
+      <pubDate>Sat, 13 May 2023 00:00:00 &#43;0000</pubDate>
+      <author>chankeichow2008@outlook.com (Snoomy)</author>
+      <guid>https://snoomy914.github.io/en/post/zhan-dui-lie-hu-shuang-duan-dui-lie-di-python-shi-xian/</guid>
+      <description>
+        <![CDATA[<h1>栈、队列和双端队列的Python实现</h1><p>Author: Snoomy(chankeichow2008@outlook.com)</p>
+        
+          栈、队列和双端队列的Python实现
+        
+        <hr><p>Published on 2023-05-13 at <a href='https://snoomy914.github.io/'>Snoomy's Blog</a>, last modified on 2023-05-13</p>]]>
+      </description>
+      
+        <category>Python</category>
+      
+    </item>
+    
+  </channel>
+</rss>

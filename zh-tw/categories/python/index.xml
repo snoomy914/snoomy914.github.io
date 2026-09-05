@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Snoomy&#39;s Blog</title>
+    <link>https://snoomy914.github.io/zh-tw/categories/python/</link>
+    <description>Recent content from Snoomy&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-TW</language>
+    
+    <managingEditor>chankeichow2008@outlook.com (Snoomy)</managingEditor>
+    <webMaster>chankeichow2008@outlook.com (Snoomy)</webMaster>
+    
+    <copyright>本部落格所有文章除特別聲明外，均採用 BY-NC-SA 授權協議。轉載請註明出處！</copyright>
+    
+    <lastBuildDate>Sat, 13 May 2023 00:00:00 +0000</lastBuildDate>
+    
+    
+    <atom:link href="https://snoomy914.github.io/zh-tw/categories/python/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>栈、队列和双端队列的Python实现</title>
+      <link>https://snoomy914.github.io/zh-tw/post/zhan-dui-lie-hu-shuang-duan-dui-lie-di-python-shi-xian/</link>
+      <pubDate>Sat, 13 May 2023 00:00:00 &#43;0000</pubDate>
+      <author>chankeichow2008@outlook.com (Snoomy)</author>
+      <guid>https://snoomy914.github.io/zh-tw/post/zhan-dui-lie-hu-shuang-duan-dui-lie-di-python-shi-xian/</guid>
+      <description>
+        <![CDATA[<h1>栈、队列和双端队列的Python实现</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
+        
+          栈、队列和双端队列的Python实现
+        
+        <hr><p>本文2023-05-13首發於<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最後修改於2023-05-13</p>]]>
+      </description>
+      
+        <category>Python</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>Python基本语法</title>
+      <link>https://snoomy914.github.io/zh-tw/post/python-ji-ben-yu-fa/</link>
+      <pubDate>Sat, 13 May 2023 00:00:00 &#43;0000</pubDate>
+      <author>chankeichow2008@outlook.com (Snoomy)</author>
+      <guid>https://snoomy914.github.io/zh-tw/post/python-ji-ben-yu-fa/</guid>
+      <description>
+        <![CDATA[<h1>Python基本语法</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
+        
+          Python 基本语法
+        
+        <hr><p>本文2023-05-13首發於<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最後修改於2023-05-13</p>]]>
+      </description>
+      
+        <category>Python</category>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Snoomy&#39;s Blog</title>
+    <link>https://snoomy914.github.io/en/archives/</link>
+    <description>Recent content from Snoomy&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    
+    <managingEditor>chankeichow2008@outlook.com (Snoomy)</managingEditor>
+    <webMaster>chankeichow2008@outlook.com (Snoomy)</webMaster>
+    
+    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    
+    <lastBuildDate></lastBuildDate>
+    
+    
+    <atom:link href="https://snoomy914.github.io/en/archives/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+  </channel>
+</rss>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Snoomy&#39;s Blog</title>
+    <link>https://snoomy914.github.io/zh-tw/tags/hugo/</link>
+    <description>Recent content from Snoomy&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-TW</language>
+    
+    <managingEditor>chankeichow2008@outlook.com (Snoomy)</managingEditor>
+    <webMaster>chankeichow2008@outlook.com (Snoomy)</webMaster>
+    
+    <copyright>本部落格所有文章除特別聲明外，均採用 BY-NC-SA 授權協議。轉載請註明出處！</copyright>
+    
+    <lastBuildDate>Sun, 16 Aug 2026 11:43:32 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://snoomy914.github.io/zh-tw/tags/hugo/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>望文生义 · 成语辨析小测</title>
+      <link>https://snoomy914.github.io/zh-tw/post/wang-wen-sheng-yi-1/</link>
+      <pubDate>Sun, 16 Aug 2026 11:22:15 &#43;0800</pubDate>
+      <author>chankeichow2008@outlook.com (Snoomy)</author>
+      <guid>https://snoomy914.github.io/zh-tw/post/wang-wen-sheng-yi-1/</guid>
+      <description>
+        <![CDATA[<h1>望文生义 · 成语辨析小测</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
+        
+          <p>成语最怕「望文生义」。小测随机抽一个成语，从「原意」与常见的「易错点」中二选一——小心，错误选项往往就是你第一反应想选的那个。题库共 315 条，答对/答错即时反馈，换题无刷新。</p>
+        
+        <hr><p>本文2026-08-16首發於<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最後修改於2026-08-16</p>]]>
+      </description>
+      
+        <category>记录</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>望文生义 · 成语用法辨析</title>
+      <link>https://snoomy914.github.io/zh-tw/post/wang-wen-sheng-yi-2/</link>
+      <pubDate>Sun, 16 Aug 2026 11:43:32 &#43;0800</pubDate>
+      <author>chankeichow2008@outlook.com (Snoomy)</author>
+      <guid>https://snoomy914.github.io/zh-tw/post/wang-wen-sheng-yi-2/</guid>
+      <description>
+        <![CDATA[<h1>望文生义 · 成语用法辨析</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
+        
+          <p>释义认得，实战才是真考验。小测随机抽一个成语，给你两句含成语的句子，判断哪句用得<strong>正确</strong>——答完还会给出原意与易错点解析，并标注原书编号。答对/答错即时反馈，换题无刷新。</p>
+        
+        <hr><p>本文2026-08-16首發於<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最後修改於2026-08-16</p>]]>
+      </description>
+      
+        <category>记录</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>一些有用的东西</title>
+      <link>https://snoomy914.github.io/zh-tw/post/yi-xie-you-yong-de-dong-xi/</link>
+      <pubDate>Sat, 15 Aug 2026 23:50:24 &#43;0800</pubDate>
+      <author>chankeichow2008@outlook.com (Snoomy)</author>
+      <guid>https://snoomy914.github.io/zh-tw/post/yi-xie-you-yong-de-dong-xi/</guid>
+      <description>
+        <![CDATA[<h1>一些有用的东西</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
+        
+          <p>这里放一些小工具、网页之类的。</p>
+<a href="https://snoomy914.github.io/wang-wen-sheng-yi/quiz.html" title="315 望文生义成语释义辨析" target="_blank">315 望文生义成语释义辨析</a>
+<a href="https://snoomy914.github.io/wang-wen-sheng-yi/quiz1.html" title="315 望文生义成语用法辨析" target="_blank">315 望文生义成语用法辨析</a>
+<a href="https://snoomy914.github.io/docs/leizhou-guide.html" title="雷州一日游" target="_blank">雷州一日游</a>
+<a href="https://snoomy914.github.io/docs/xuwen-guide.html" title="徐闻一日游" target="_blank">徐闻一日游</a>
+        
+        <hr><p>本文2026-08-15首發於<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最後修改於2026-08-15</p>]]>
+      </description>
+      
+        <category>记录</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>Reimu 主题下的 i18n</title>
+      <link>https://snoomy914.github.io/zh-tw/post/hugo-reimu-i18n/</link>
+      <pubDate>Sat, 01 Aug 2026 17:15:02 &#43;0800</pubDate>
+      <author>chankeichow2008@outlook.com (Snoomy)</author>
+      <guid>https://snoomy914.github.io/zh-tw/post/hugo-reimu-i18n/</guid>
+      <description>
+        <![CDATA[<h1>Reimu 主题下的 i18n</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
+        
+          一步步教你为 Reimu 主题添加多语言支持，包括目录结构、配置文件和自定义语言处理。
+        
+        <hr><p>本文2026-08-01首發於<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最後修改於2026-08-01</p>]]>
+      </description>
+      
+        <category>教程</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>Termux 安装 Hugo</title>
+      <link>https://snoomy914.github.io/zh-tw/post/termux-install-hugo/</link>
+      <pubDate>Tue, 28 Jul 2026 16:52:05 &#43;0800</pubDate>
+      <author>chankeichow2008@outlook.com (Snoomy)</author>
+      <guid>https://snoomy914.github.io/zh-tw/post/termux-install-hugo/</guid>
+      <description>
+        <![CDATA[<h1>Termux 安装 Hugo</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
+        
+          用 Go 编译 Hugo Extended，解决 Termux arm64 无预编译二进制文件的问题
+        
+        <hr><p>本文2026-07-28首發於<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最後修改於2026-07-28</p>]]>
+      </description>
+      
+        <category>教程</category>
+      
+    </item>
+    
+  </channel>
+</rss>
