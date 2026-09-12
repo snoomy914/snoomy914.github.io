@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://snoomy914.github.io/categories/</loc>
-    <lastmod>2026-08-30T13:56:00+08:00</lastmod>
+    <lastmod>2026-09-06T00:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -25,31 +25,57 @@
                 href="https://snoomy914.github.io/en/categories/"
                 />
   </url><url>
-    <loc>https://snoomy914.github.io/tags/jetbrains/</loc>
-    <lastmod>2026-08-30T13:56:00+08:00</lastmod>
+    <loc>https://snoomy914.github.io/tags/katex/</loc>
+    <lastmod>2026-09-06T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://snoomy914.github.io/tags/latex/</loc>
+    <lastmod>2026-09-06T00:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="https://snoomy914.github.io/tags/jetbrains/"
+                href="https://snoomy914.github.io/tags/latex/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="yue"
-                href="https://snoomy914.github.io/yue/tags/jetbrains/"
+                href="https://snoomy914.github.io/yue/tags/latex/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
-                href="https://snoomy914.github.io/zh-tw/tags/jetbrains/"
+                href="https://snoomy914.github.io/zh-tw/tags/latex/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://snoomy914.github.io/en/tags/jetbrains/"
+                href="https://snoomy914.github.io/en/tags/latex/"
+                />
+  </url><url>
+    <loc>https://snoomy914.github.io/tags/markdown/</loc>
+    <lastmod>2026-09-06T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://snoomy914.github.io/tags/markdown/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="yue"
+                href="https://snoomy914.github.io/yue/tags/markdown/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://snoomy914.github.io/zh-tw/tags/markdown/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://snoomy914.github.io/en/tags/markdown/"
                 />
   </url><url>
     <loc>https://snoomy914.github.io/</loc>
-    <lastmod>2026-08-30T13:56:00+08:00</lastmod>
+    <lastmod>2026-09-06T00:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -72,7 +98,7 @@
                 />
   </url><url>
     <loc>https://snoomy914.github.io/tags/</loc>
-    <lastmod>2026-08-30T13:56:00+08:00</lastmod>
+    <lastmod>2026-09-06T00:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -92,6 +118,84 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://snoomy914.github.io/en/tags/"
+                />
+  </url><url>
+    <loc>https://snoomy914.github.io/tags/word/</loc>
+    <lastmod>2026-09-06T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://snoomy914.github.io/post/high-school-typography-guide/</loc>
+    <lastmod>2026-09-06T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://snoomy914.github.io/categories/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2026-09-06T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://snoomy914.github.io/categories/%E6%95%99%E7%A8%8B/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="yue"
+                href="https://snoomy914.github.io/yue/categories/%E6%95%99%E7%A8%8B/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://snoomy914.github.io/zh-tw/categories/%E6%95%99%E7%A8%8B/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://snoomy914.github.io/en/categories/%E6%95%99%E7%A8%8B/"
+                />
+  </url><url>
+    <loc>https://snoomy914.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2026-09-06T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://snoomy914.github.io/tags/%E6%95%99%E7%A8%8B/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="yue"
+                href="https://snoomy914.github.io/yue/tags/%E6%95%99%E7%A8%8B/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://snoomy914.github.io/zh-tw/tags/%E6%95%99%E7%A8%8B/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://snoomy914.github.io/en/tags/%E6%95%99%E7%A8%8B/"
+                />
+  </url><url>
+    <loc>https://snoomy914.github.io/tags/%E6%8E%92%E7%89%88/</loc>
+    <lastmod>2026-09-06T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://snoomy914.github.io/tags/jetbrains/</loc>
+    <lastmod>2026-08-30T13:56:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://snoomy914.github.io/tags/jetbrains/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="yue"
+                href="https://snoomy914.github.io/yue/tags/jetbrains/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://snoomy914.github.io/zh-tw/tags/jetbrains/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://snoomy914.github.io/en/tags/jetbrains/"
                 />
   </url><url>
     <loc>https://snoomy914.github.io/post/jetbrains-xue-sheng-mian-fei-zhi-nan/</loc>
@@ -138,52 +242,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://snoomy914.github.io/en/tags/%E5%B7%A5%E5%85%B7/"
-                />
-  </url><url>
-    <loc>https://snoomy914.github.io/categories/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2026-08-30T13:56:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://snoomy914.github.io/categories/%E6%95%99%E7%A8%8B/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="yue"
-                href="https://snoomy914.github.io/yue/categories/%E6%95%99%E7%A8%8B/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://snoomy914.github.io/zh-tw/categories/%E6%95%99%E7%A8%8B/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://snoomy914.github.io/en/categories/%E6%95%99%E7%A8%8B/"
-                />
-  </url><url>
-    <loc>https://snoomy914.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2026-08-30T13:56:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://snoomy914.github.io/tags/%E6%95%99%E7%A8%8B/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="yue"
-                href="https://snoomy914.github.io/yue/tags/%E6%95%99%E7%A8%8B/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://snoomy914.github.io/zh-tw/tags/%E6%95%99%E7%A8%8B/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://snoomy914.github.io/en/tags/%E6%95%99%E7%A8%8B/"
                 />
   </url><url>
     <loc>https://snoomy914.github.io/tags/opencv/</loc>
@@ -805,52 +863,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://snoomy914.github.io/en/tags/%E8%BD%AC%E8%BD%BD/"
-                />
-  </url><url>
-    <loc>https://snoomy914.github.io/tags/latex/</loc>
-    <lastmod>2026-07-14T18:40:16+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://snoomy914.github.io/tags/latex/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="yue"
-                href="https://snoomy914.github.io/yue/tags/latex/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://snoomy914.github.io/zh-tw/tags/latex/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://snoomy914.github.io/en/tags/latex/"
-                />
-  </url><url>
-    <loc>https://snoomy914.github.io/tags/markdown/</loc>
-    <lastmod>2026-07-14T18:40:16+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://snoomy914.github.io/tags/markdown/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="yue"
-                href="https://snoomy914.github.io/yue/tags/markdown/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://snoomy914.github.io/zh-tw/tags/markdown/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://snoomy914.github.io/en/tags/markdown/"
                 />
   </url><url>
     <loc>https://snoomy914.github.io/post/fulltest/</loc>
