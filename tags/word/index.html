@@ -155,7 +155,7 @@
           <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
           <span id="selected-lang">简体中文</span>
         </div>
-        <ul class="select-items" id="select-items" role="listbox" aria-label="Languages"><li data-value="zh-cn" role="option" class="selected" aria-selected="true" >简体中文</li></ul>
+        <ul class="select-items" id="select-items" role="listbox" aria-label="Languages"><li data-value="zh-cn" role="option" class="selected" aria-selected="true" >简体中文</li><li data-value="yue" role="option" aria-selected="false" >粵語</li><li data-value="zh-tw" role="option" aria-selected="false" >繁體中文</li><li data-value="en" role="option" aria-selected="false" >English</li></ul>
       </div>
       <script>
         var selectSelected = document.getElementById("select-selected");
@@ -171,7 +171,7 @@
 
         selectOptions.forEach((item) => {
           item.addEventListener("click", () => {
-            const langMap = {};selectedLang.textContent = item.textContent;
+            const langMap = {};langMap['yue'] = '\/yue\/tags\/word\/';langMap['zh-tw'] = '\/zh-tw\/tags\/word\/';langMap['en'] = '\/en\/tags\/word\/';selectedLang.textContent = item.textContent;
             selectItems.classList.remove("show");
             selectOptions.forEach((option) => {
               option.classList.remove("selected");
@@ -225,17 +225,17 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">18</div>
+    <div>文章</div><div class="sidebar-state-number">19</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
     <div class="sidebar-state-number">
-      6
+      7
     </div>
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">25</div>
+    <div class="sidebar-state-number">27</div>
   </a>
 </div>
 <div class="sidebar-social" style="margin-bottom: 20px;"><div class="icon-email sidebar-social-icon">
@@ -282,6 +282,11 @@
                 <a class="category-list-link" href="/categories/%E6%A0%A1%E5%9B%AD%E7%94%9F%E6%B4%BB/" 
                   title="校园生活"
                   >校园生活</a
+                >
+              </li><li class="category-list-item">
+                <a class="category-list-link" href="/categories/%E6%BC%94%E8%AE%B2%E7%A8%BF/" 
+                  title="演讲稿"
+                  >演讲稿</a
                 >
               </li><li class="category-list-item">
                 <a class="category-list-link" href="/categories/%E8%AE%B0%E5%BD%95/" 
@@ -474,6 +479,11 @@
             >办事指南</a
           ><a
             style="font-size:10px"
+            href="/tags/%E5%AD%A6%E4%B9%A0/"
+            aria-label="标签: 学习"
+            >学习</a
+          ><a
+            style="font-size:10px"
             href="/tags/%E5%B0%8F%E6%B5%8B/"
             aria-label="标签: 小测"
             >小测</a
@@ -497,11 +507,6 @@
             href="/tags/%E6%95%99%E7%A8%8B/"
             aria-label="标签: 教程"
             >教程</a
-          ><a
-            style="font-size:10px"
-            href="/tags/%E6%95%99%E8%82%B2/"
-            aria-label="标签: 教育"
-            >教育</a
           ></div>
   </div>
 </div><div class="widget-wrapper">
@@ -512,6 +517,8 @@
       <h3 class="widget-title">最新文章</h3>
       <div class="widget">
         <ul><li>
+              <a href="/post/q-s-speech/" title="有效学习：如何利用碎片时间">有效学习：如何利用碎片时间</a>
+            </li><li>
               <a href="/post/high-school-typography-guide/" title="高中生排版指北">高中生排版指北</a>
             </li><li>
               <a href="/post/jetbrains-xue-sheng-mian-fei-zhi-nan/" title="高中生免费正版 JetBrains 全家桶：学生免费申请全指南">高中生免费正版 JetBrains 全家桶：学生免费申请全指南</a>
@@ -519,8 +526,6 @@
               <a href="/post/class-night-lapse/" title="晚修延时摄影项目介绍">晚修延时摄影项目介绍</a>
             </li><li>
               <a href="/post/dun-xing-zhi-5/" title="敦行志 第五期">敦行志 第五期</a>
-            </li><li>
-              <a href="/post/wang-wen-sheng-yi-2/" title="望文生义 · 成语用法辨析">望文生义 · 成语用法辨析</a>
             </li></ul>
       </div>
     </div>
@@ -630,6 +635,13 @@
       class="archives-tag-list-item"
       data-aos="zoom-in"
     >
+      <a class="archives-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/"
+        >学习</a
+      >
+    </div><div
+      class="archives-tag-list-item"
+      data-aos="zoom-in"
+    >
       <a class="archives-tag-list-link" href="/tags/%E5%B0%8F%E6%B5%8B/"
         >小测</a
       >
@@ -674,6 +686,13 @@
     >
       <a class="archives-tag-list-link" href="/tags/%E6%95%A6%E8%A1%8C%E5%BF%97/"
         >敦行志</a
+      >
+    </div><div
+      class="archives-tag-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-tag-list-link" href="/tags/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"
+        >时间管理</a
       >
     </div><div
       class="archives-tag-list-item"
@@ -731,6 +750,13 @@
     >
       <a class="archives-category-list-link" href="/categories/%E6%A0%A1%E5%9B%AD%E7%94%9F%E6%B4%BB/"
         >校园生活</a
+      >
+    </div><div
+      class="archives-category-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-category-list-link" href="/categories/%E6%BC%94%E8%AE%B2%E7%A8%BF/"
+        >演讲稿</a
       >
     </div><div
       class="archives-category-list-item"
@@ -802,10 +828,10 @@
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;48.7k</span
+          >&nbsp;52.2k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;01:46</span>
+        <span class="icon-coffee">&nbsp;01:54</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -839,17 +865,17 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">18</div>
+    <div>文章</div><div class="sidebar-state-number">19</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
     <div class="sidebar-state-number">
-      6
+      7
     </div>
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">25</div>
+    <div class="sidebar-state-number">27</div>
   </a>
 </div>
 <div class="sidebar-social" ><div class="icon-email sidebar-social-icon">

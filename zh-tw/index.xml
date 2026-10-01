@@ -12,12 +12,52 @@
     
     <copyright>本部落格所有文章除特別聲明外，均採用 BY-NC-SA 授權協議。轉載請註明出處！</copyright>
     
-    <lastBuildDate>Sun, 30 Aug 2026 13:56:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 14:12:45 +0800</lastBuildDate>
     
     
     <atom:link href="https://snoomy914.github.io/zh-tw/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>有效学习：如何利用碎片时间</title>
+      <link>https://snoomy914.github.io/zh-tw/post/q-s-speech/</link>
+      <pubDate>Sat, 26 Sep 2026 14:12:45 &#43;0800</pubDate>
+      <author>chankeichow2008@outlook.com (Snoomy)</author>
+      <guid>https://snoomy914.github.io/zh-tw/post/q-s-speech/</guid>
+      <description>
+        <![CDATA[<h1>有效学习：如何利用碎片时间</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
+        
+          一篇关于有效学习的演讲稿整理稿：讨论碎片时间的理论上限、实际利用效率，以及如何通过身体、答疑、练习和计划、态度、执行来提升学习效果。
+        
+        <hr><p>本文2026-09-26首發於<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最後修改於2026-09-26</p>]]>
+      </description>
+      
+        <category>演讲稿</category><category>记录</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>高中生排版指北</title>
+      <link>https://snoomy914.github.io/zh-tw/post/high-school-typography-guide/</link>
+      <pubDate>Sun, 06 Sep 2026 00:00:00 &#43;0800</pubDate>
+      <author>chankeichow2008@outlook.com (Snoomy)</author>
+      <guid>https://snoomy914.github.io/zh-tw/post/high-school-typography-guide/</guid>
+      <description>
+        <![CDATA[<h1>高中生排版指北</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
+        
+          写完发现，这大概是我除了作业和论文之外写过最正经的东西了。但其实也没多正经。
+        
+        <hr><p>本文2026-09-06首發於<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最後修改於2026-09-06</p>]]>
+      </description>
+      
+        <category>教程</category>
+      
+    </item>
     
     
 
@@ -207,55 +247,6 @@
       </description>
       
         <category>校园生活</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>敦行志 第三期</title>
-      <link>https://snoomy914.github.io/zh-tw/post/dun-xing-zhi-3/</link>
-      <pubDate>Fri, 07 Aug 2026 00:00:00 &#43;0000</pubDate>
-      <author>chankeichow2008@outlook.com (Snoomy)</author>
-      <guid>https://snoomy914.github.io/zh-tw/post/dun-xing-zhi-3/</guid>
-      <description>
-        <![CDATA[<h1>敦行志 第三期</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
-        
-          <h1 id="敦行志">
-<a class="header-anchor" href="#%e6%95%a6%e8%a1%8c%e5%bf%97"></a>
-敦行志
-</h1><p><strong>广东广雅中学2027届高三级组</strong></p>
-<p><strong>第3期</strong></p>
-<p><strong>2026年8月7日</strong></p>
-<blockquote>
-<p>编者按:<br>
-本期的两篇文章属于“温和派”，它们的中心只有一个——发现并认识真实的自己，坦然接受，然后保持向往，静静地努力。站在高三的起点，站在高山的脚下，如果恨不得一下子登顶，你会感到痛苦且容易力竭。读读下面的文章，审视自己的处境，明白什么叫“静水流深”，从此欣然出发，笑着登上顶峰。</p>
-</blockquote>
-        
-        <hr><p>本文2026-08-07首發於<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最後修改於2026-08-07</p>]]>
-      </description>
-      
-        <category>敦行志</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>Reimu 主题下的 i18n</title>
-      <link>https://snoomy914.github.io/zh-tw/post/hugo-reimu-i18n/</link>
-      <pubDate>Sat, 01 Aug 2026 17:15:02 &#43;0800</pubDate>
-      <author>chankeichow2008@outlook.com (Snoomy)</author>
-      <guid>https://snoomy914.github.io/zh-tw/post/hugo-reimu-i18n/</guid>
-      <description>
-        <![CDATA[<h1>Reimu 主题下的 i18n</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
-        
-          一步步教你为 Reimu 主题添加多语言支持，包括目录结构、配置文件和自定义语言处理。
-        
-        <hr><p>本文2026-08-01首發於<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最後修改於2026-08-01</p>]]>
-      </description>
-      
-        <category>教程</category>
       
     </item>
     
