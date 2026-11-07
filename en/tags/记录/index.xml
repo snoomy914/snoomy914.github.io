@@ -30,7 +30,129 @@
       <description>
         <![CDATA[<h1>晚修延时摄影项目介绍</h1><p>Author: Snoomy(chankeichow2008@outlook.com)</p>
         
-          一个基于 Python + OpenCV 的班级晚修延时摄影小工具，支持定时拍摄、自动时间戳、双输出日志，可选 WebDAV 上传。
+          
+  <blockquote class="alert-blockquote tips">
+    <p class="alert-heading">
+      Tips
+    </p>
+    <p><p>项目地址：<a href="https://github.com/kuqilin/classNightLapse">github.com/kuqilin/classNightLapse</a></p></p>
+  </blockquote>
+
+<h2 id="背景">
+<a class="header-anchor" href="#%e8%83%8c%e6%99%af"></a>
+背景
+</h2><p>想用班上一体机的摄像头来拍班级晚修的延时摄影，因此写了这个简单的 Python 程序。非常好用哈，在晚修前运行这个程序，没有痕迹，下晚修后就能看到成片了 ^_^</p>
+<p>全程只需要 <code>opencv-python</code> 和 <code>requests</code> 两个依赖，核心就是一个 <code>main.py</code>，简单粗暴。</p>
+
+  <blockquote class="alert-blockquote note">
+    <p class="alert-heading">
+      Note
+    </p>
+    <p><p>附带效果：程序运行期间摄像头会被一直占用，所以老师也没法通过希沃云班远程看我们晚修了（嘘，这算是写这个程序的一大动力）🤫</p></p>
+  </blockquote>
+
+<h2 id="功能特性">
+<a class="header-anchor" href="#%e5%8a%9f%e8%83%bd%e7%89%b9%e6%80%a7"></a>
+功能特性
+</h2><ul>
+<li><strong>定时自动拍摄</strong>：设置开始 / 结束时间（默认 18:55–20:35，正好覆盖一节晚修），到点自动开拍，结束自动保存</li>
+<li><strong>拍摄间隔可调</strong>：默认 1 秒拍一帧，一节晚修 100 分钟 ≈ 6000 帧，最终以 30fps 合成，成片约 3 分多钟</li>
+<li><strong>自动时间戳</strong>：每帧右上角叠加当前时间，背景色根据画面亮度自适应（亮背景黑底白字，暗背景白底黑字）</li>
+<li><strong>双输出日志</strong>：控制台和日志文件同步记录，方便排查&quot;为什么没拍上&quot;</li>
+<li><strong>可选 WebDAV 上传</strong>：拍完自动把成片传到网盘（默认关闭，需要自己改配置）</li>
+</ul>
+<h2 id="项目结构">
+<a class="header-anchor" href="#%e9%a1%b9%e7%9b%ae%e7%bb%93%e6%9e%84"></a>
+项目结构
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">classNightLapse/
+</span></span><span class="line"><span class="cl">├── main.py            <span class="c1"># 全部代码，单文件</span>
+</span></span><span class="line"><span class="cl">├── requirements.txt   <span class="c1"># opencv-python、requests</span>
+</span></span><span class="line"><span class="cl">├── LICENSE            <span class="c1"># MIT</span>
+</span></span><span class="line"><span class="cl">└── .gitignore         <span class="c1"># 忽略 outputs/ logs/ 等</span>
+</span></span></code></pre></div><h2 id="核心实现解析">
+<a class="header-anchor" href="#%e6%a0%b8%e5%bf%83%e5%ae%9e%e7%8e%b0%e8%a7%a3%e6%9e%90"></a>
+核心实现解析
+</h2><h3 id="配置区">
+<a class="header-anchor" href="#%e9%85%8d%e7%bd%ae%e5%8c%ba"></a>
+配置区
+</h3><p>所有参数都集中在文件头部，改起来非常直观：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">WEBDAV</span> <span class="o">=</span> <span class="kc">False</span>                 <span class="c1"># 是否启用 WebDAV 上传</span>
+</span></span><span class="line"><span class="cl"><span class="n">START_HOUR</span><span class="p">,</span> <span class="n">START_MINUTE</span> <span class="o">=</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">55</span>
+</span></span><span class="line"><span class="cl"><span class="n">END_HOUR</span><span class="p">,</span> <span class="n">END_MINUTE</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">35</span>
+</span></span><span class="line"><span class="cl"><span class="n">CAMERA_INDEX</span> <span class="o">=</span> <span class="mi">0</span>               <span class="c1"># 摄像头编号</span>
+</span></span><span class="line"><span class="cl"><span class="n">OUTPUT_FILE</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;outputs/</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">_%H-%M-%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">.avi&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">FPS</span> <span class="o">=</span> <span class="mi">30</span>                       <span class="c1"># 最终视频帧率</span>
+</span></span><span class="line"><span class="cl"><span class="n">FRAME_WIDTH</span> <span class="o">=</span> <span class="mi">1920</span>             <span class="c1"># 试了几个，只有这个能拍全班级</span>
+</span></span><span class="line"><span class="cl"><span class="n">FRAME_HEIGHT</span> <span class="o">=</span> <span class="mi">1080</span>            <span class="c1"># 3224 那个不够宽，拍不全</span>
+</span></span><span class="line"><span class="cl"><span class="n">INTERVAL_SECONDS</span> <span class="o">=</span> <span class="mi">1</span>           <span class="c1"># 拍摄间隔，单位秒</span>
+</span></span><span class="line"><span class="cl"><span class="n">SHOW_TIMESTAMP</span> <span class="o">=</span> <span class="kc">True</span>          <span class="c1"># 是否显示时间</span>
+</span></span><span class="line"><span class="cl"><span class="n">LOG_FILE</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;logs/</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">_%H-%M-%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">.log&#34;</span>
+</span></span></code></pre></div><p>这里有个小细节：分辨率是试出来的，只有 <code>1920x1080</code> 能把整个班级拍全。输出文件和日志文件名都带时间戳，每次运行不会互相覆盖。</p>
+<h3 id="主流程-main">
+<a class="header-anchor" href="#%e4%b8%bb%e6%b5%81%e7%a8%8b-main"></a>
+主流程 <code>main()</code>
+</h3><p>整体思路很清晰：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 1. 如果已经过了结束时间，直接退出</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 如果还没到开始时间，睡到开始前 2 秒</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 打开摄像头、设分辨率、读一帧确定尺寸</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4. 创建 VideoWriter，精确对齐开始时间拍第一帧</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 5. while 循环按绝对时刻拍摄，直到结束时间</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 6. finally 里释放资源，统计帧数，可选上传 WebDAV</span>
+</span></span></code></pre></div><p>值得一说的有两个点：</p>
+<p><strong>提前 2 秒打开摄像头</strong>。摄像头初始化需要时间，如果到点才开始初始化，第一帧会晚于预定时刻。所以程序在开始时间前 2 秒就打开摄像头，等真正到点了直接抓帧，保证第一帧精确落在 18:55:00。</p>
+<p><strong>绝对时刻调度防漂移</strong>。拍摄循环里没有用&quot;睡 1 秒&quot;这种相对间隔，而是维护一个 <code>next_capture</code> 绝对时刻，每拍完一帧就 <code>next_capture += timedelta(seconds=INTERVAL_SECONDS)</code>，再睡到那个时刻：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 下一个预定拍摄时刻（绝对时间，避免累积偏差）</span>
+</span></span><span class="line"><span class="cl"><span class="n">next_capture</span> <span class="o">+=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="n">INTERVAL_SECONDS</span><span class="p">)</span>
+</span></span></code></pre></div><p>这样即使某次 <code>sleep</code> 或抓帧慢了，也不会把误差累积到后面，长跑一节课也不会越拍越飘。这个细节很关键，延时摄影最怕的就是节奏漂移。</p>
+<h3 id="时间戳-draw_timestamp">
+<a class="header-anchor" href="#%e6%97%b6%e9%97%b4%e6%88%b3-draw_timestamp"></a>
+时间戳 <code>draw_timestamp()</code>
+</h3><p>每帧右上角叠加时间，背景色是<strong>根据画面亮度自适应</strong>的——先取背景框区域的平均亮度，亮背景用黑底白字，暗背景用白底黑字：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mean_brightness</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">gray</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">mean_brightness</span> <span class="o">&gt;</span> <span class="mi">128</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">bg_color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>          <span class="c1"># 黑色背景</span>
+</span></span><span class="line"><span class="cl">    <span class="n">text_color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>  <span class="c1"># 白色文字</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">bg_color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>    <span class="c1"># 白色背景</span>
+</span></span><span class="line"><span class="cl">    <span class="n">text_color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>        <span class="c1"># 黑色文字</span>
+</span></span></code></pre></div><p>再用 <code>cv2.addWeighted</code> 做 0.6 透明度的半透明底，效果比直接白字好看不少，晚修教室灯光忽明忽暗也不会看不清。</p>
+<h3 id="日志-logprint">
+<a class="header-anchor" href="#%e6%97%a5%e5%bf%97-logprint"></a>
+日志 <code>logprint()</code>
+</h3><p>同时写控制台和日志文件，每行都带时间戳。晚上在教室一体机上跑的时候，你不可能一直盯着屏幕看，出问题了翻日志就行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">logprint</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;[</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">LOG_FILE</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;[</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="webdav-上传-upload_webdav">
+<a class="header-anchor" href="#webdav-%e4%b8%8a%e4%bc%a0-upload_webdav"></a>
+WebDAV 上传 <code>upload_webdav()</code>
+</h3><p>默认关闭。开启后拍完会把成片用标准 PUT 请求传到 WebDAV 网盘（用的是 <code>HTTPBasicAuth</code> 认证），这样不用回教室就能在手机上看到成片：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">url</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">auth</span><span class="o">=</span><span class="n">HTTPBasicAuth</span><span class="p">(</span><span class="n">USERNAME</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">timeout</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># 忽略 SSL 证书问题</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>如果要用 WebDAV，记得自己改配置并重新编译。</p>
+<h3 id="异常兜底">
+<a class="header-anchor" href="#%e5%bc%82%e5%b8%b8%e5%85%9c%e5%ba%95"></a>
+异常兜底
+</h3><p><code>while</code> 循环外面包了 <code>try / except KeyboardInterrupt</code>，即使中途被人 Ctrl+C 打断，也会在 <code>finally</code> 里正常释放摄像头、保存已经拍到的部分，不会丢帧丢文件。</p>
+<h2 id="使用方法">
+<a class="header-anchor" href="#%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95"></a>
+使用方法
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install -r requirements.txt
+</span></span><span class="line"><span class="cl">python main.py
+</span></span></code></pre></div><p>到点自动开拍，结束自动保存成片到 <code>outputs/</code> 下。日志在 <code>logs/</code> 下。</p>
+<p>想部署到班上一体机的话，可以根据 <code>.gitignore</code> 里预留的 <code>build/</code>、<code>dist/</code>、<code>*.spec</code> 用 PyInstaller 打成 exe，直接双击运行，非常省事。</p>
+<h2 id="总结">
+<a class="header-anchor" href="#%e6%80%bb%e7%bb%93"></a>
+总结
+</h2><p>一个单文件就能搞定的延时摄影小工具：定时开拍、自动时间戳、防漂移调度、日志兜底，功能不多但都很实用。代码量不大，感兴趣的可以直接去看源码：<a href="https://github.com/kuqilin/classNightLapse">classNightLapse</a>。</p>
+<p>下次晚修，记得提前 2 分钟运行它，下课后就能收获一份属于全班的三分钟延时大片了 🎬</p>
+
         
         <hr><p>Published on 2026-08-23 at <a href='https://qzchen.top/'>Snoomy's Blog</a>, last modified on 2026-08-23</p>]]>
       </description>
@@ -50,7 +172,153 @@
       <description>
         <![CDATA[<h1>Reimu 主题下的 i18n</h1><p>Author: Snoomy(chankeichow2008@outlook.com)</p>
         
-          一步步教你为 Reimu 主题添加多语言支持，包括目录结构、配置文件和自定义语言处理。
+          
+  <blockquote class="alert-blockquote tips">
+    <p class="alert-heading">
+      Tips
+    </p>
+    <p><p>建议先通读本文了解基本流程和坑以后在一步一步跟着操作。<br>
+因为作者表达能力欠佳，本文由作者写完之后交由 AI 进行润色。</p></p>
+  </blockquote>
+
+<p>虽然花时间翻译自己的文章并不常见，但既然做了，就记录一下完整流程，方便后来者。</p>
+<h2 id="为什么需要手动配置">
+<a class="header-anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81%e6%89%8b%e5%8a%a8%e9%85%8d%e7%bd%ae"></a>
+为什么需要手动配置？
+</h2><p>Hugo 本身支持多语言（i18n），但主题通常需要你按约定组织文件和配置。Reimu 主题默认只提供单语言结构，要启用多语言，你需要做三件事：</p>
+<ol>
+<li>重构内容文件夹，按语言分目录</li>
+<li>为每篇文章关联翻译（通过 <code>translationKey</code>）</li>
+<li>在配置文件中声明语言，并（如果使用非内置语言）补充主题的本地化文案和翻译文件</li>
+</ol>
+<p>下面按步骤展开。</p>
+<h2 id="第一步调整内容文件夹结构">
+<a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e6%ad%a5%e8%b0%83%e6%95%b4%e5%86%85%e5%ae%b9%e6%96%87%e4%bb%b6%e5%a4%b9%e7%bb%93%e6%9e%84"></a>
+第一步：调整内容文件夹结构
+</h2><p>Reimu 主题默认将文章放在 <code>content/</code> 下（如 <code>content/post/</code>、<code>content/about.md</code> 等）。<br>
+<strong>多语言时，需在 <code>content/</code> 下为每种语言单独建一个子文件夹</strong>，子文件夹名即为语言代码（如 <code>zh-CN</code>、<code>en</code>、<code>yue</code>）。</p>
+<p><strong>操作示例</strong><br>
+假设你原有简体中文内容（<code>zh-CN</code>），现在要增加英文（<code>en</code>）和粤语（<code>yue</code>）：</p>
+<ol>
+<li>在 <code>content/</code> 下新建 <code>zh-CN/</code>、<code>en/</code>、<code>yue/</code> 文件夹。</li>
+<li>将原来 <code>content/</code> 下的所有内容（<code>about.md</code>、<code>post/</code> 等）<strong>整个移动或复制</strong>到 <code>zh-CN/</code> 内（作为默认语言）。</li>
+<li>再将 <code>zh-CN/</code> 下的内容<strong>复制</strong>到 <code>en/</code> 和 <code>yue/</code> 中，之后分别翻译各文件夹内的 <code>.md</code> 文件。</li>
+</ol>
+<p>最终结构类似：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">content/
+</span></span><span class="line"><span class="cl">├── en/
+</span></span><span class="line"><span class="cl">│   ├── about.md
+</span></span><span class="line"><span class="cl">│   ├── archives/
+</span></span><span class="line"><span class="cl">│   ├── friend.md
+</span></span><span class="line"><span class="cl">│   └── post/
+</span></span><span class="line"><span class="cl">├── yue/
+</span></span><span class="line"><span class="cl">│   ├── about.md
+</span></span><span class="line"><span class="cl">│   ├── archives/
+</span></span><span class="line"><span class="cl">│   ├── friend.md
+</span></span><span class="line"><span class="cl">│   └── post/
+</span></span><span class="line"><span class="cl">├── zh-CN/
+</span></span><span class="line"><span class="cl">│   ├── about.md
+</span></span><span class="line"><span class="cl">│   ├── archives/
+</span></span><span class="line"><span class="cl">│   ├── friend.md
+</span></span><span class="line"><span class="cl">│   └── post/
+</span></span><span class="line"><span class="cl">└── zh-TW/          <span class="c1"># 可选，以此类推</span>
+</span></span><span class="line"><span class="cl">    ├── about.md
+</span></span><span class="line"><span class="cl">    ├── archives/
+</span></span><span class="line"><span class="cl">    ├── friend.md
+</span></span><span class="line"><span class="cl">    └── post/
+</span></span></code></pre></div><blockquote>
+<p><strong>注意</strong>：原 <code>content/</code> 根目录下不要再放置任何内容，否则 Hugo 会将其视为无语言归属的内容，可能引发混乱。</p>
+</blockquote>
+<h2 id="第二步关联不同语言版本translationkey">
+<a class="header-anchor" href="#%e7%ac%ac%e4%ba%8c%e6%ad%a5%e5%85%b3%e8%81%94%e4%b8%8d%e5%90%8c%e8%af%ad%e8%a8%80%e7%89%88%e6%9c%actranslationkey"></a>
+第二步：关联不同语言版本（translationKey）
+</h2><p>Hugo 需要通过 <code>translationKey</code> 来识别哪些文件互为翻译。<br>
+<strong>在每个语言的对应文件中，frontmatter 里写上相同的 <code>translationKey</code> 值</strong>。</p>
+<p>例如，在 <code>content/zh-CN/about.md</code>、<code>content/en/about.md</code> 和 <code>content/yue/about.md</code> 中都加入：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">translationKey</span><span class="p">:</span><span class="w"> </span><span class="l">about</span><span class="w">
+</span></span></span></code></pre></div><p>同样，每篇博文（如 <code>post/hello.md</code>）也要在所有语言版本中设置相同的 <code>translationKey</code>（可以设置为文章标题的 slug 或自定义标识）。</p>
+<p><strong>为什么重要</strong>：没有这个字段，语言切换按钮将无法在文章页显示可切换的语言列表。</p>
+<h2 id="第三步在-hugotoml-中声明语言">
+<a class="header-anchor" href="#%e7%ac%ac%e4%b8%89%e6%ad%a5%e5%9c%a8-hugotoml-%e4%b8%ad%e5%a3%b0%e6%98%8e%e8%af%ad%e8%a8%80"></a>
+第三步：在 <code>hugo.toml</code> 中声明语言
+</h2><p>完成文件夹结构后，构建时 Hugo 会找不到语言定义而喜提报错。你需要在 <code>hugo.toml</code>（或 <code>config.toml</code>）中为每一种语言添加配置。</p>
+<p><strong>基础配置示例</strong>（以粤语 <code>yue</code> 为例）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">languages</span><span class="p">.</span><span class="nx">yue</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">locale</span> <span class="p">=</span> <span class="s2">&#34;yue&#34;</span>                <span class="c"># 语言代码，需与文件夹名一致</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">label</span> <span class="p">=</span> <span class="s2">&#34;粵語&#34;</span>                <span class="c"># 界面显示的语言名称（可自定义）</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">hasCJKLanguage</span> <span class="p">=</span> <span class="kc">true</span>         <span class="c"># 若语言包含中日韩文字，设为 true</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">contentDir</span> <span class="p">=</span> <span class="s2">&#34;content/yue&#34;</span>    <span class="c"># 指向该语言的内容文件夹</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">weight</span> <span class="p">=</span> <span class="mi">2</span>                    <span class="c"># 在语言切换列表中的排序，数值越小越靠前</span>
+</span></span></code></pre></div><p><strong>其他语言</strong>（如英文）同理：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">languages</span><span class="p">.</span><span class="nx">en</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">locale</span> <span class="p">=</span> <span class="s2">&#34;en&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">label</span> <span class="p">=</span> <span class="s2">&#34;English&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">hasCJKLanguage</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">contentDir</span> <span class="p">=</span> <span class="s2">&#34;content/en&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">weight</span> <span class="p">=</span> <span class="mi">3</span>
+</span></span></code></pre></div><p><strong>设置默认语言</strong>（避免浏览器语言偏好干扰）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">defaultContentLanguage</span> <span class="p">=</span> <span class="s2">&#34;zh-CN&#34;</span>   <span class="c"># 设为你的主语言</span>
+</span></span></code></pre></div><blockquote>
+<p>提示：<code>weight</code> 影响切换菜单中的顺序，建议为常用语言设较小值。</p>
+</blockquote>
+<h2 id="第四步处理主题未内置的自定义语言">
+<a class="header-anchor" href="#%e7%ac%ac%e5%9b%9b%e6%ad%a5%e5%a4%84%e7%90%86%e4%b8%bb%e9%a2%98%e6%9c%aa%e5%86%85%e7%bd%ae%e7%9a%84%e8%87%aa%e5%ae%9a%e4%b9%89%e8%af%ad%e8%a8%80"></a>
+第四步：处理「主题未内置」的自定义语言
+</h2><p>Reimu 主题自带了一些 UI 文案（如“复制成功”），但只在部分语言（如 <code>en</code>、<code>zh-CN</code>、<code>ja</code> 等）中预置了翻译。<br>
+如果你添加的语言不在主题支持列表中（例如泰文 <code>th</code>、粤语 <code>yue</code> 虽然主题可能未包含），则必须额外补充两处配置，否则构建时主题会因找不到对应语言的文案而报错。</p>
+<h3 id="41-补充-paramsyml-中的文案翻译">
+<a class="header-anchor" href="#41-%e8%a1%a5%e5%85%85-paramsyml-%e4%b8%ad%e7%9a%84%e6%96%87%e6%a1%88%e7%bf%bb%e8%af%91"></a>
+4.1 补充 <code>params.yml</code> 中的文案翻译
+</h3><p>主题的 UI 文案定义在 <code>themes/reimu/config/_default/params.yml</code> 中。<br>
+你需要<strong>将这份文件复制到项目根目录的 <code>config/_default/params.yml</code></strong>（若没有则新建对应文件夹），然后在该文件中为你的语言添加所有字段。</p>
+<p>例如，原文件中有 <code>clipboard.success</code> 字段：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">clipboard</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">success</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">en</span><span class="p">:</span><span class="w"> </span><span class="l">Copy successfully (*^▽^*)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">zh-CN</span><span class="p">:</span><span class="w"> </span><span class="l">复制成功 (*^▽^*)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">yue</span><span class="p">:</span><span class="w"> </span><span class="l">複製成功 (*^▽^*)         </span><span class="w"> </span><span class="c"># 新增 yue 的翻译</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">zh-TW</span><span class="p">:</span><span class="w"> </span><span class="l">複製成功 (*^▽^*)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ja</span><span class="p">:</span><span class="w"> </span><span class="l">コピー成功 (*^▽^*)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">pt-BR</span><span class="p">:</span><span class="w"> </span><span class="l">Copiado com sucesso (*^▽^*)</span><span class="w">
+</span></span></span></code></pre></div><p>你需要检查所有带 i18n 的字段（如 <code>comment.title</code>、<code>preloader.text</code> 等），逐一为你的语言添加对应值。<br>
+<strong>注意</strong>：语言键（如 <code>yue</code>）必须与你在 <code>hugo.toml</code> 中 <code>[languages.yue]</code> 的 <code>locale</code> 值完全一致。</p>
+<h3 id="42-创建独立的-i18n-翻译文件">
+<a class="header-anchor" href="#42-%e5%88%9b%e5%bb%ba%e7%8b%ac%e7%ab%8b%e7%9a%84-i18n-%e7%bf%bb%e8%af%91%e6%96%87%e4%bb%b6"></a>
+4.2 创建独立的 <code>i18n</code> 翻译文件
+</h3><p>Hugo 本身需要一些基础翻译字符串（如月份名称、日期格式等），这些在主题的 <code>i18n/</code> 文件夹中提供。<br>
+同样，将 <code>themes/reimu/i18n/</code> 下的某个现有文件（如 <code>zh-CN.yml</code>）复制到项目根目录的 <code>i18n/</code> 文件夹中，重命名为你的语言代码（如 <code>yue.yml</code>），然后将里面的字符串逐一翻译成你的语言。</p>
+<p>如果不做这一步，Hugo 构建时会因为缺少翻译数据而报错（类似 <code>missing translations</code>）。</p>
+<h2 id="常见问题">
+<a class="header-anchor" href="#%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98"></a>
+常见问题
+</h2><ul>
+<li>
+<p><strong>切换语言后页面 404？</strong><br>
+检查 <code>contentDir</code> 路径是否正确，且每个语言文件夹内确有对应文件。</p>
+</li>
+<li>
+<p><strong>语言切换按钮不出现？</strong><br>
+确认所有互为翻译的文件都设置了相同的 <code>translationKey</code>，且至少有两个语言版本存在。</p>
+</li>
+<li>
+<p><strong>修改后仍报错？</strong><br>
+运行 <code>hugo --cleanDestinationDir</code> 清除缓存后重新构建，有时旧配置会残留。</p>
+</li>
+<li>
+<p><strong>只改 <code>params.yml</code> 还不够？</strong><br>
+确保同时完成了 <strong>4.1</strong> 和 <strong>4.2</strong> 两步，缺一不可。</p>
+</li>
+</ul>
+<h2 id="总结">
+<a class="header-anchor" href="#%e6%80%bb%e7%bb%93"></a>
+总结
+</h2><p>Reimu 主题的 i18n 配置虽不复杂，但步骤环环相扣。简记要点：</p>
+<ul>
+<li>按语言分目录 → 加 <code>translationKey</code> → 声明语言配置</li>
+<li>若使用非内置语言，额外补充主题 UI 文案（<code>params.yml</code>）和基础翻译（<code>i18n/*.yml</code>）</li>
+</ul>
+<p>按照上述步骤操作，你就能拥有一个完美切换的多语言 Hugo 站点。祝写作愉快！</p>
+
         
         <hr><p>Published on 2026-08-01 at <a href='https://qzchen.top/'>Snoomy's Blog</a>, last modified on 2026-08-01</p>]]>
       </description>
@@ -130,6 +398,7 @@
 	</tbody>
 </table>
 <details>你不应看到这里</details>
+
         
         <hr><p>Published on 2025-02-22 at <a href='https://qzchen.top/'>Snoomy's Blog</a>, last modified on 2026-07-12</p>]]>
       </description>
