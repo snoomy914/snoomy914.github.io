@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Snoomy&#39;s Blog</title>
-    <link>https://snoomy914.github.io/tags/</link>
+    <link>https://qzchen.top/tags/</link>
     <description>Recent content from Snoomy&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -15,7 +15,7 @@
     <lastBuildDate></lastBuildDate>
     
     
-    <atom:link href="https://snoomy914.github.io/tags/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://qzchen.top/tags/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     

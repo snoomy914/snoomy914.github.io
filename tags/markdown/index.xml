@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Markdown on Snoomy&#39;s Blog</title>
-    <link>https://snoomy914.github.io/tags/markdown/</link>
+    <link>https://qzchen.top/tags/markdown/</link>
     <description>Recent content from Snoomy&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Sun, 06 Sep 2026 00:00:00 +0800</lastBuildDate>
     
     
-    <atom:link href="https://snoomy914.github.io/tags/markdown/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://qzchen.top/tags/markdown/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,16 +23,16 @@
 
     <item>
       <title>高中生排版指北</title>
-      <link>https://snoomy914.github.io/post/high-school-typography-guide/</link>
+      <link>https://qzchen.top/post/high-school-typography-guide/</link>
       <pubDate>Sun, 06 Sep 2026 00:00:00 &#43;0800</pubDate>
       <author>chankeichow2008@outlook.com (Snoomy)</author>
-      <guid>https://snoomy914.github.io/post/high-school-typography-guide/</guid>
+      <guid>https://qzchen.top/post/high-school-typography-guide/</guid>
       <description>
         <![CDATA[<h1>高中生排版指北</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
         
           写完发现，这大概是我除了作业和论文之外写过最正经的东西了。但其实也没多正经。
         
-        <hr><p>本文2026-09-06首发于<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最后修改于2026-09-06</p>]]>
+        <hr><p>本文2026-09-06首发于<a href='https://qzchen.top/'>Snoomy's Blog</a>，最后修改于2026-09-06</p>]]>
       </description>
       
         <category>教程</category>
@@ -43,16 +43,16 @@
 
     <item>
       <title>Markdown &amp; LaTeX 全量测试文档</title>
-      <link>https://snoomy914.github.io/post/fulltest/</link>
+      <link>https://qzchen.top/post/fulltest/</link>
       <pubDate>Sun, 25 Jan 2026 14:45:32 &#43;0800</pubDate>
       <author>chankeichow2008@outlook.com (Snoomy)</author>
-      <guid>https://snoomy914.github.io/post/fulltest/</guid>
+      <guid>https://qzchen.top/post/fulltest/</guid>
       <description>
         <![CDATA[<h1>Markdown & LaTeX 全量测试文档</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
         
           Markdown 和 LaTeX 的全量测试文档，试试支不支持这些语法。
         
-        <hr><p>本文2026-01-25首发于<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最后修改于2026-07-14</p>]]>
+        <hr><p>本文2026-01-25首发于<a href='https://qzchen.top/'>Snoomy's Blog</a>，最后修改于2026-07-14</p>]]>
       </description>
       
     </item>
@@ -61,16 +61,16 @@
 
     <item>
       <title>Markdown语法</title>
-      <link>https://snoomy914.github.io/post/markdown-grammar/</link>
+      <link>https://qzchen.top/post/markdown-grammar/</link>
       <pubDate>Tue, 10 Jan 2023 00:00:00 &#43;0000</pubDate>
       <author>chankeichow2008@outlook.com (Snoomy)</author>
-      <guid>https://snoomy914.github.io/post/markdown-grammar/</guid>
+      <guid>https://qzchen.top/post/markdown-grammar/</guid>
       <description>
         <![CDATA[<h1>Markdown语法</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
         
           一些 Markdown 语法
         
-        <hr><p>本文2023-01-10首发于<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最后修改于2023-01-10</p>]]>
+        <hr><p>本文2023-01-10首发于<a href='https://qzchen.top/'>Snoomy's Blog</a>，最后修改于2023-01-10</p>]]>
       </description>
       
     </item>

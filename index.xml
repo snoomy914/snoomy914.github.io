@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Snoomy&#39;s Blog</title>
-    <link>https://snoomy914.github.io/</link>
+    <link>https://qzchen.top/</link>
     <description>Recent content from Snoomy&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Sat, 26 Sep 2026 14:12:45 +0800</lastBuildDate>
     
     
-    <atom:link href="https://snoomy914.github.io/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://qzchen.top/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,16 +23,16 @@
 
     <item>
       <title>有效学习：如何利用碎片时间</title>
-      <link>https://snoomy914.github.io/post/q-s-speech/</link>
+      <link>https://qzchen.top/post/q-s-speech/</link>
       <pubDate>Sat, 26 Sep 2026 14:12:45 &#43;0800</pubDate>
       <author>chankeichow2008@outlook.com (Snoomy)</author>
-      <guid>https://snoomy914.github.io/post/q-s-speech/</guid>
+      <guid>https://qzchen.top/post/q-s-speech/</guid>
       <description>
         <![CDATA[<h1>有效学习：如何利用碎片时间</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
         
           一篇关于有效学习的演讲稿整理稿：讨论碎片时间的理论上限、实际利用效率，以及如何通过身体、答疑、练习和计划、态度、执行来提升学习效果。
         
-        <hr><p>本文2026-09-26首发于<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最后修改于2026-09-26</p>]]>
+        <hr><p>本文2026-09-26首发于<a href='https://qzchen.top/'>Snoomy's Blog</a>，最后修改于2026-09-26</p>]]>
       </description>
       
         <category>演讲稿</category><category>记录</category>
@@ -43,16 +43,16 @@
 
     <item>
       <title>高中生排版指北</title>
-      <link>https://snoomy914.github.io/post/high-school-typography-guide/</link>
+      <link>https://qzchen.top/post/high-school-typography-guide/</link>
       <pubDate>Sun, 06 Sep 2026 00:00:00 &#43;0800</pubDate>
       <author>chankeichow2008@outlook.com (Snoomy)</author>
-      <guid>https://snoomy914.github.io/post/high-school-typography-guide/</guid>
+      <guid>https://qzchen.top/post/high-school-typography-guide/</guid>
       <description>
         <![CDATA[<h1>高中生排版指北</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
         
           写完发现，这大概是我除了作业和论文之外写过最正经的东西了。但其实也没多正经。
         
-        <hr><p>本文2026-09-06首发于<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最后修改于2026-09-06</p>]]>
+        <hr><p>本文2026-09-06首发于<a href='https://qzchen.top/'>Snoomy's Blog</a>，最后修改于2026-09-06</p>]]>
       </description>
       
         <category>教程</category>
@@ -63,16 +63,16 @@
 
     <item>
       <title>高中生免费正版 JetBrains 全家桶：学生免费申请全指南</title>
-      <link>https://snoomy914.github.io/post/jetbrains-xue-sheng-mian-fei-zhi-nan/</link>
+      <link>https://qzchen.top/post/jetbrains-xue-sheng-mian-fei-zhi-nan/</link>
       <pubDate>Sun, 30 Aug 2026 13:56:00 &#43;0800</pubDate>
       <author>chankeichow2008@outlook.com (Snoomy)</author>
-      <guid>https://snoomy914.github.io/post/jetbrains-xue-sheng-mian-fei-zhi-nan/</guid>
+      <guid>https://qzchen.top/post/jetbrains-xue-sheng-mian-fei-zhi-nan/</guid>
       <description>
         <![CDATA[<h1>高中生免费正版 JetBrains 全家桶：学生免费申请全指南</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
         
           高中生申请 JetBrains 学生免费的完整指南：资格条件、三条验证路线（GitHub 学生包 / 官方文件 / ISIC）、申请步骤、续期方法与常见坑。
         
-        <hr><p>本文2026-08-30首发于<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最后修改于2026-08-30</p>]]>
+        <hr><p>本文2026-08-30首发于<a href='https://qzchen.top/'>Snoomy's Blog</a>，最后修改于2026-08-30</p>]]>
       </description>
       
         <category>教程</category>
@@ -83,16 +83,16 @@
 
     <item>
       <title>晚修延时摄影项目介绍</title>
-      <link>https://snoomy914.github.io/post/class-night-lapse/</link>
+      <link>https://qzchen.top/post/class-night-lapse/</link>
       <pubDate>Sun, 23 Aug 2026 10:17:53 &#43;0800</pubDate>
       <author>chankeichow2008@outlook.com (Snoomy)</author>
-      <guid>https://snoomy914.github.io/post/class-night-lapse/</guid>
+      <guid>https://qzchen.top/post/class-night-lapse/</guid>
       <description>
         <![CDATA[<h1>晚修延时摄影项目介绍</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
         
           一个基于 Python + OpenCV 的班级晚修延时摄影小工具，支持定时拍摄、自动时间戳、双输出日志，可选 WebDAV 上传。
         
-        <hr><p>本文2026-08-23首发于<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最后修改于2026-08-23</p>]]>
+        <hr><p>本文2026-08-23首发于<a href='https://qzchen.top/'>Snoomy's Blog</a>，最后修改于2026-08-23</p>]]>
       </description>
       
         <category>记录</category>
@@ -103,10 +103,10 @@
 
     <item>
       <title>敦行志 第五期</title>
-      <link>https://snoomy914.github.io/post/dun-xing-zhi-5/</link>
+      <link>https://qzchen.top/post/dun-xing-zhi-5/</link>
       <pubDate>Mon, 17 Aug 2026 00:00:00 &#43;0000</pubDate>
       <author>chankeichow2008@outlook.com (Snoomy)</author>
-      <guid>https://snoomy914.github.io/post/dun-xing-zhi-5/</guid>
+      <guid>https://qzchen.top/post/dun-xing-zhi-5/</guid>
       <description>
         <![CDATA[<h1>敦行志 第五期</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
         
@@ -123,7 +123,7 @@
 <p>李普曼警示我们：别把“刻板印象”当成全部真相。备考中，若只盯着平均分、纠结一时进退，便是陷入了认知盲点。真正的破局，在于看懂“二八定律”背后的事律逻辑——80%的提分，往往来自20%的核心漏洞。愿你们跳出“线性努力”的陷阱，在AI浪潮前找准属于自己的“优先连接”，教本务实，行稳致远。</p>
 </blockquote>
         
-        <hr><p>本文2026-08-17首发于<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最后修改于2026-08-17</p>]]>
+        <hr><p>本文2026-08-17首发于<a href='https://qzchen.top/'>Snoomy's Blog</a>，最后修改于2026-08-17</p>]]>
       </description>
       
         <category>敦行志</category>
@@ -134,16 +134,16 @@
 
     <item>
       <title>望文生义 · 成语辨析小测</title>
-      <link>https://snoomy914.github.io/post/wang-wen-sheng-yi-1/</link>
+      <link>https://qzchen.top/post/wang-wen-sheng-yi-1/</link>
       <pubDate>Sun, 16 Aug 2026 11:22:15 &#43;0800</pubDate>
       <author>chankeichow2008@outlook.com (Snoomy)</author>
-      <guid>https://snoomy914.github.io/post/wang-wen-sheng-yi-1/</guid>
+      <guid>https://qzchen.top/post/wang-wen-sheng-yi-1/</guid>
       <description>
         <![CDATA[<h1>望文生义 · 成语辨析小测</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
         
           <p>成语最怕「望文生义」。小测随机抽一个成语，从「原意」与常见的「易错点」中二选一——小心，错误选项往往就是你第一反应想选的那个。题库共 315 条，答对/答错即时反馈，换题无刷新。</p>
         
-        <hr><p>本文2026-08-16首发于<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最后修改于2026-08-16</p>]]>
+        <hr><p>本文2026-08-16首发于<a href='https://qzchen.top/'>Snoomy's Blog</a>，最后修改于2026-08-16</p>]]>
       </description>
       
         <category>记录</category>
@@ -154,16 +154,16 @@
 
     <item>
       <title>望文生义 · 成语用法辨析</title>
-      <link>https://snoomy914.github.io/post/wang-wen-sheng-yi-2/</link>
+      <link>https://qzchen.top/post/wang-wen-sheng-yi-2/</link>
       <pubDate>Sun, 16 Aug 2026 11:43:32 &#43;0800</pubDate>
       <author>chankeichow2008@outlook.com (Snoomy)</author>
-      <guid>https://snoomy914.github.io/post/wang-wen-sheng-yi-2/</guid>
+      <guid>https://qzchen.top/post/wang-wen-sheng-yi-2/</guid>
       <description>
         <![CDATA[<h1>望文生义 · 成语用法辨析</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
         
           <p>释义认得，实战才是真考验。小测随机抽一个成语，给你两句含成语的句子，判断哪句用得<strong>正确</strong>——答完还会给出原意与易错点解析，并标注原书编号。答对/答错即时反馈，换题无刷新。</p>
         
-        <hr><p>本文2026-08-16首发于<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最后修改于2026-08-16</p>]]>
+        <hr><p>本文2026-08-16首发于<a href='https://qzchen.top/'>Snoomy's Blog</a>，最后修改于2026-08-16</p>]]>
       </description>
       
         <category>记录</category>
@@ -174,10 +174,10 @@
 
     <item>
       <title>一些有用的东西</title>
-      <link>https://snoomy914.github.io/post/yi-xie-you-yong-de-dong-xi/</link>
+      <link>https://qzchen.top/post/yi-xie-you-yong-de-dong-xi/</link>
       <pubDate>Sat, 15 Aug 2026 23:50:24 &#43;0800</pubDate>
       <author>chankeichow2008@outlook.com (Snoomy)</author>
-      <guid>https://snoomy914.github.io/post/yi-xie-you-yong-de-dong-xi/</guid>
+      <guid>https://qzchen.top/post/yi-xie-you-yong-de-dong-xi/</guid>
       <description>
         <![CDATA[<h1>一些有用的东西</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
         
@@ -187,7 +187,7 @@
 <a href="https://snoomy914.github.io/docs/leizhou-guide.html" title="雷州一日游" target="_blank">雷州一日游</a>
 <a href="https://snoomy914.github.io/docs/xuwen-guide.html" title="徐闻一日游" target="_blank">徐闻一日游</a>
         
-        <hr><p>本文2026-08-15首发于<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最后修改于2026-08-15</p>]]>
+        <hr><p>本文2026-08-15首发于<a href='https://qzchen.top/'>Snoomy's Blog</a>，最后修改于2026-08-15</p>]]>
       </description>
       
         <category>记录</category>
@@ -198,10 +198,10 @@
 
     <item>
       <title>敦行志 第四期</title>
-      <link>https://snoomy914.github.io/post/dun-xing-zhi-4/</link>
+      <link>https://qzchen.top/post/dun-xing-zhi-4/</link>
       <pubDate>Fri, 14 Aug 2026 00:00:00 &#43;0000</pubDate>
       <author>chankeichow2008@outlook.com (Snoomy)</author>
-      <guid>https://snoomy914.github.io/post/dun-xing-zhi-4/</guid>
+      <guid>https://qzchen.top/post/dun-xing-zhi-4/</guid>
       <description>
         <![CDATA[<h1>敦行志 第四期</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
         
@@ -220,7 +220,7 @@
 <p>站在高三的渡口，愿你能借人文之火淬炼科学之真，以重新诠释的勇气改写自我叙事，在文理交融中涵养胸襟，在自我关怀中积蓄力量。请记住，高三修炼的不仅是解题的速度，更是解释世界、定义自我的能力。以此“敦行”，方能抵达真正的“致远”。</p>
 </blockquote>
         
-        <hr><p>本文2026-08-14首发于<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最后修改于2026-08-14</p>]]>
+        <hr><p>本文2026-08-14首发于<a href='https://qzchen.top/'>Snoomy's Blog</a>，最后修改于2026-08-14</p>]]>
       </description>
       
         <category>敦行志</category>
@@ -231,10 +231,10 @@
 
     <item>
       <title>白嫖必看！如何在 GY 打印在读证明？</title>
-      <link>https://snoomy914.github.io/post/gy-zai-du-zheng-ming/</link>
+      <link>https://qzchen.top/post/gy-zai-du-zheng-ming/</link>
       <pubDate>Wed, 12 Aug 2026 14:26:14 &#43;0800</pubDate>
       <author>chankeichow2008@outlook.com (Snoomy)</author>
-      <guid>https://snoomy914.github.io/post/gy-zai-du-zheng-ming/</guid>
+      <guid>https://qzchen.top/post/gy-zai-du-zheng-ming/</guid>
       <description>
         <![CDATA[<h1>白嫖必看！如何在 GY 打印在读证明？</h1><p>作者：Snoomy（chankeichow2008@outlook.com）</p>
         
@@ -243,7 +243,7 @@
 </blockquote>
 <p>有了在读证明，你只需花费 <strong>36 RMB</strong>，即可在毕业前享受公共交通五折优惠；有了在读证明，可以白嫖 GitHub、JetBrains 等平台的学生优惠。</p>
         
-        <hr><p>本文2026-08-12首发于<a href='https://snoomy914.github.io/'>Snoomy's Blog</a>，最后修改于2026-08-12</p>]]>
+        <hr><p>本文2026-08-12首发于<a href='https://qzchen.top/'>Snoomy's Blog</a>，最后修改于2026-08-12</p>]]>
       </description>
       
         <category>校园生活</category>
