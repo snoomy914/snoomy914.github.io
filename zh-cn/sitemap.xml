@@ -2,6 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://qzchen.top/</loc>
+    <lastmod>2026-11-28T23:50:02+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://qzchen.top/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="yue"
+                href="https://qzchen.top/yue/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://qzchen.top/zh-tw/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://qzchen.top/en/"
+                />
+  </url><url>
+    <loc>https://qzchen.top/post/wen-yan-shi-ci/</loc>
+    <lastmod>2026-11-28T23:50:02+08:00</lastmod>
+  </url><url>
     <loc>https://qzchen.top/categories/</loc>
     <lastmod>2026-09-26T14:12:45+08:00</lastmod>
     <xhtml:link
@@ -23,29 +49,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://qzchen.top/en/categories/"
-                />
-  </url><url>
-    <loc>https://qzchen.top/</loc>
-    <lastmod>2026-09-26T14:12:45+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://qzchen.top/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="yue"
-                href="https://qzchen.top/yue/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://qzchen.top/zh-tw/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://qzchen.top/en/"
                 />
   </url><url>
     <loc>https://qzchen.top/tags/</loc>
